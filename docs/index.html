@@ -10,7 +10,7 @@
       <section class="text-submission">
         <h2 tabindex="0">Word <span>Watch</span> 👀</h2>
         <textarea placeholder="Paste text here"></textarea>
-        <button>Break down</button>
+        <button onclick="myFunction()">Break down</button>
       </section>
 
       <section class="word-data" tabindex="0">
@@ -24,3 +24,22 @@
   </body>
 </html>
 
+<script>
+
+function getTopWord() {
+  fetch("https://wordwatch-api.herokuapp.com/api/v1/top_word")
+  .then(response => {
+    return json(response)
+    .then(response => {
+      console.log("===================")
+      console.log("===================")
+      console.log(response)
+      console.log("===================")
+      console.log("===================")
+      console.log("===================")
+
+    });
+  });
+}
+
+</script>
